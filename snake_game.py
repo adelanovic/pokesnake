@@ -22,8 +22,12 @@ SNAKE_SPEED = 6
 # Set up the game window
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption('Pokesnake')
-pygame.mixer.music.load('music/tiesto.mp3')
-pygame.mixer.music.play(-1)
+try:
+    pygame.mixer.music.load('music/tiesto.mp3')
+    pygame.mixer.music.play(-1)
+except Exception as e:
+    print(e)
+
 clock = pygame.time.Clock()
 
 icon_image_path = 'images/pikachu.png'
